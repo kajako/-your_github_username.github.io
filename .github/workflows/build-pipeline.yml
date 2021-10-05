@@ -34,6 +34,9 @@ jobs:
           SECRET: ${{secrets.PASSWORD}}
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
+      #  uses: docker/metadata-action@v3
+      #  uses: docker/build-push-action@v2
+      #- name: DOCKER 
       # Step 3 - Add tests and linting here
   deploy:
     needs: build
@@ -58,9 +61,7 @@ jobs:
         with: 
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
-        #uses: docker/metadata-action@v3
-        #uses: docker/build-push-action@v2
-      #- name: DOCKER 
+
         
         
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
